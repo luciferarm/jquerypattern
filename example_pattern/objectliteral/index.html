@@ -14,18 +14,21 @@
                 </div>
                 <div class="panel-body">
                     <!--<div class="col-md-8 col-md-offset-2 " > -->
-                        <div class="form-group">
-                            <input placeholder="Digite o nome do produto" id="inputName" class="form-control" type="text" >
-                        </div>
+                    <div class="form-group">
+                        <input placeholder="Digite o nome do produto" id="inputName" class="form-control" type="text" >
+                        <br>
                         <button type="button" id="addProduct" class="btn btn-success" >Add Product</button>
+                    </div>
                     <!-- </div> -->
                     <div id="productList" class="list-group" >
                         <script id="product-template" type="text/template">
                             {{#product}}
-                                <a href="#" class="list-group-item active records" id="record" >
-                                    <h4 class="list-group-item-heading">{{.}}</h4>
-                                    <p class="list-group-item-text"> <br> </p>
-                                    <span class="badge" id="deleteProduct" > <i class="fa fa-x2 fa-trash" aria-hidden="true"></i></span>
+                                <a href="#" class="list-group-item records" id="record" >
+                                    <p class="list-group-item-text"> {{.}}
+                                        <button type="button" class="btn btn-danger btn-sm pull-right" id="deleteProduct" >
+                                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                        </button>
+                                    </p>
                                 </a>
                             {{/product}}
                         </script>
