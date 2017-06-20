@@ -1,9 +1,9 @@
 <html>
     <head>
         <tittle></tittle>
-        <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../node_modules/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     </head>
     <body>
     <br>
@@ -24,8 +24,8 @@
                         <script id="product-template" type="text/template">
                             {{#product}}
                                 <a href="#" class="list-group-item records" id="record" >
-                                    <p class="list-group-item-text"> {{.}}
-                                        <button type="button" class="btn btn-danger btn-sm pull-right" id="deleteProduct" >
+                                    <p class="list-group-item-text"> {{ name }} | {{ refs }} | {{ category }}
+                                        <button class="btn btn-danger btn-sm pull-right" id="deleteProduct" >
                                             <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
                                         </button>
                                     </p>
@@ -37,8 +37,12 @@
             </div>
         </div>
     </body>
-    <script src="../../node_modules/jquery/dist/jquery.min.js" > </script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" > </script>
-    <script src="../../node_modules/mustache/mustache.js" > </script>
-    <script src="../objectliteral/appProductModule.js" > </script>
+    <script src="../node_modules/jquery/dist/jquery.min.js" > </script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" > </script>
+    <script src="../node_modules/mustache/mustache.js" > </script>
+    <!-- PATTERN OBJECT LITERAL -->
+    <!-- <script src="objectliteral/appProductModule.js" > </script> -->
+    <!-- REVEALING PATTERN -->
+    <script src="revealingpattern/appProductModule.js" > </script>
+
 </html>

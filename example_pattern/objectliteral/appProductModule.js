@@ -1,9 +1,20 @@
 /**
  * Created by Jefferson on 14/06/2017.
  */
-(function (){
+//(function (){
     var product = {
-        product: ['Almofada', 'Agua'],
+        product: [
+            {
+                name : 'Almofada',
+                refs : 'AMD',
+                category : 'Utils'
+            },
+            {
+                name : 'Agua',
+                refs : 'AG',
+                category : 'Food'
+            }
+        ],
         init: function() {
             this.cacheDom();
             this.bindEvents();
@@ -18,18 +29,19 @@
 
         },
         bindEvents: function() {
+            /* this is necessary because (this) would be */
             this.$addProduct.on('click', this.addProduct.bind(this));
-            this.$productList.delegate('button#deleteProduct', 'click', this.deleteProduct.bind(this));
+            this.$productList.on('click','button#deleteProduct', this.deleteProduct.bind(this));
         },
         render: function() {
             var data = {
                 product: this.product,
             };
+            // {{}}
             this.$productList.html(Mustache.render(this.template, data));
         },
         addProduct: function() {
-
-            this.product.push(this.$inputName.val());
+            this.product.push({ name : this.$inputName.val() });
             this.render();
             this.$inputName.val('');
         },
@@ -45,4 +57,4 @@
 
     product.init();
 
-})();
+//})();
