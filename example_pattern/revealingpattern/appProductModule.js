@@ -37,10 +37,12 @@ var product = (function(){
         };
 
         $productList.html(Mustache.render(template, data));
+        //notification.showNotify(product[product.length - 1].name);
+        mediator.publish("productMessageSuccess" , product[product.length - 1].name);
     }
 
     function addProduct (value) {
-        var productClass = (typeof value === "object") ? value : { name : $inputName.val() };
+        var productClass = (typeof value === "string") ? { name : value } : { name : $inputName.val() };
         product.push(productClass);
         _render();
         $inputName.val('');

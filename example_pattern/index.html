@@ -7,6 +7,18 @@
     </head>
     <body>
     <br>
+        <div id="notificationModule" class="col-md-6 col-md-offset-3" >
+            <div id="notificationList" >
+                <script id="notification-template" type="text/template">
+                    {{#notification}}
+                        <div class="alert alert-warning alert-dismissible" role="alert" id="notification">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong> Success !</strong> {{ name }} was successfully registered
+                        </div>
+                    {{/notification}}
+                </script>
+            </div>
+        </div>
         <div id="productModule" class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -43,7 +55,8 @@
     <!-- PATTERN OBJECT LITERAL -->
     <!-- <script src="objectliteral/appProductModule.js" > </script> -->
     <!-- REVEALING PATTERN -->
-    <script src="revealingpattern/appProductModule.js" > </script>
     <script src="singletonpattern/mediator/mediator.js" > </script>
+    <script src="revealingpattern/notification.js" > </script>
+    <script src="revealingpattern/appProductModule.js" > </script>
 
 </html>
