@@ -40,7 +40,7 @@ Question.prototype.getAnswer = function () {
 
 Question.prototype.displayQuestion = function () {
     var questionToDisplay = "<div class='question'>" + this.question + "</div><ul>";
-    choiceCounter = 0;
+    var choiceCounter = 0;
 
     this.choices.forEach(function (eachChoice)  {
         questionToDisplay += '<li><input type="radio" name="choice" value="' + choiceCounter + '">' + eachChoice + '</li>';
@@ -53,11 +53,13 @@ Question.prototype.displayQuestion = function () {
 
 var MultipleChoiceQuestion = function (question, choices ,answer){
     MultipleChoiceQuestion.super_.call(this,question, choices ,answer);
-}
+};
+
+inherits(MultipleChoiceQuestion,Question);
 
 MultipleChoiceQuestion.prototype.displayQuestion = function () {
     var questionToDisplay = "<div class='question'>" + this.question + "</div><ul>";
-    choiceCounter = 0;
+    var choiceCounter = 0;
 
     this.choices.forEach(function (eachChoice)  {
         questionToDisplay += '<li><input type="checkbox" name="choice" value="' + choiceCounter + '">' + eachChoice + '</li>';
@@ -68,10 +70,13 @@ MultipleChoiceQuestion.prototype.displayQuestion = function () {
     console.log (questionToDisplay);
 };
 
-inherits(MultipleChoiceQuestion,Question);
+
+
+// using each type Question Inheritance
 
 var question1 = new Question("What is your name ?",['jeff','jonh','josh'],1);
 question1.displayQuestion();
 
-var question2 = new MultipleChoiceQuestion("What is your name ?",['jeff','jonh','josh'],[1,3]);
+var question2 = new MultipleChoiceQuestion("How is your name composed ?",['jeff','jonh','josh'],[1,2]);
+console.log(question2);
 question2.displayQuestion();
